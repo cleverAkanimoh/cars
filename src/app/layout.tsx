@@ -24,7 +24,7 @@ const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-rubik",
-  fallback: ["serif", "Times new roman"],
+  fallback: ["sans", "Times new roman"],
 });
 
 const lusitana = Lusitana({
