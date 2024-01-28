@@ -35,7 +35,7 @@ type CardProps = {
   weight_in_lbs: number;
   acceleration: number;
   year: string;
-  origin: string
+  origin: string;
 };
 
 export default function CarsCard({
@@ -216,7 +216,7 @@ export default function CarsCard({
           <Link
             href={`listings/`}
             className={clsx(
-              "w-11/12 px-6 self-center rounded-md bg-orange-600 hover:bg-orange-500 border-orange-100 text-center text-sm text-white capitalize",
+              "w-11/12 px-6 self-center rounded-md bg-orange-500 hover:bg-orange-500 border-orange-100 text-center text-sm text-white capitalize",
               {
                 "py-[10px] my-3": !isListAlign,
                 "py-2": isListAlign,

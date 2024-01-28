@@ -87,25 +87,9 @@
   }
 
   .login-form > input {
-    border: 1px dashed rgb(219, 213, 209);
-    height: 48px;
-    text-indent: 10px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    @apply bg-purple-50 text-sm w-full font-normal;
+    @apply bg-purple-50 text-xs w-full h-12 border border-grayLine indent-[10px] shadow-xs focus:outline-none first-of-type:rounded-t-md last-of-type:rounded-b-md last-of-type:border-t-0;
   }
 
-  .login-form > input:focus {
-    outline: none;
-  }
-
-  .login-form > input:first-of-type {
-    border-radius: 6px 6px 0px 0px;
-  }
-
-  .login-form > input:last-of-type {
-    border-radius: 0px 0px 6px 6px;
-    border-top: none;
-  }
 
   .login-form > button {
     background-color: #ff8c38;
@@ -119,7 +103,7 @@
   /* sign up form */
 
   .signup-input {
-    @apply h-12 indent-1 xs:indent-[10px] px-1 font-normal placeholder:text-xs text-sm bg-purple-50 text-[.98rem] focus:outline-0 border border-grayLine shadow-xs border-dashed;
+    @apply h-12 indent-1 xs:indent-[10px] px-1 font-normal placeholder:text-xs text-xs bg-purple-50 focus:outline-0 border border-grayLine shadow-xs border-dashed;
   }
 
   .auth-btn {

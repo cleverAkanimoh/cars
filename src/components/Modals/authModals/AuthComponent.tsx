@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import LoginComponent from "./LoginComponent";
 import SignupComponent from "./SignupComponent";
 import { useGlobalContext } from "@/context";
@@ -20,7 +18,7 @@ export default function AuthComponent() {
       <div
         className={`${
           authClick ? "scale-100 opacity-100" : "scale-0 opacity-0"
-        } relative w-[98%] max-w-[420px] sm:max-w-[500px] max-h-[90vh] xs:max-h-[85vh] overflow-hidden overflow-y-auto py-4 px-[6px] xs:px-2 rounded bg-purple-50 text-slate-800 transition-custom duration-[400ms] flex flex-col gap-5`}
+        } relative w-[98%] max-w-[450px] sm:max-w-[550px] max-h-[90vh] xs:max-h-[85vh] overflow-hidden overflow-y-auto py-4 px-[6px] xs:px-4 rounded bg-purple-50 text-slate-800 transition-custom duration-[400ms] flex flex-col gap-5`}
       >
         <header className="flex self-center font-serif h-[35px] xs:h-10 sm:h-12 w-full sm:w-[95%] border-b rounded-bl-md">
           <Button

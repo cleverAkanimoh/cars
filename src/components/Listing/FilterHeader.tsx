@@ -46,7 +46,7 @@ export default function FilterHeader() {
           {true && (
             <Link
               href="/listings/new"
-              className="flex gap-2 h-10 items-center rounded-lg bg-orange-600 px-4 text-sm font-medium text-white transition-colors hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 md:absolute md:bottom-4"
+              className="flex gap-2 h-10 items-center rounded-lg bg-orange-500 px-4 text-sm font-medium text-white transition-colors hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 md:absolute md:bottom-4"
               title="add to listing"
             >
               <span className="hidden xs:block">Create Listing</span>
@@ -97,7 +97,7 @@ export default function FilterHeader() {
 
       <Button
         onClick={() => setToggleFilter((prev) => !prev)}
-        className="absolute -top-1 -right-3 z-10 hover:z-20 opacity-40 hover:opacity-100 bg-orange-600 hover:bg-orange-400 text-white hidden md:block"
+        className="absolute -top-1 -right-3 z-10 hover:z-20 opacity-40 hover:opacity-100 bg-orange-500 hover:bg-orange-400 text-white hidden md:block"
       >
         <ChevronDoubleLeftIcon
           className={clsx("h-4 transition-all duration-300", {
