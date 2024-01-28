@@ -21,7 +21,6 @@ import { navlinks } from "@/lib/data";
 export default function NavBar() {
   const { isMenuClicked, setIsMenuClicked } = useGlobalContext();
   const pathname = usePathname();
-  console.log(pathname);
 
   const toggleMenu = () => {
     setIsMenuClicked((prev) => !prev);

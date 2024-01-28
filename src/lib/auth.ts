@@ -1,7 +1,7 @@
 import { NextAuthOptions, User, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import {PrismaAdapter} from "@next-auth/prisma-adapter";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import { prisma } from "@/lib";
 import { comparePass } from "@/utils";
@@ -22,17 +22,20 @@ export const authConfig: NextAuthOptions = {
           passcode: string;
         };
 
-        if (!credentials || !email || !passcode)
+        if (!credentials || !email || !passcode) {
           throw new Error("invalid credentials");
-
+        }
+        
         const dbUser = await prisma.user.findUnique({
           where: { email },
         });
 
-        if (email === dbUser?.email) throw new Error("Email already exist");
+        if (email === dbUser?.email) {
+          throw new Error("Email already exist");
+        }
 
-        // if (dbUser && comparePass(passcode, dbUser.passcode))
-        //   return dbUser as User;
+        if (dbUser && comparePass(passcode, dbUser.passcode))
+          return dbUser as User;
 
         return null;
       },
@@ -45,11 +48,11 @@ export const authConfig: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, session, trigger }) {
       console.log("jwt token", { token, user, session, trigger });
-      
+
       if (trigger === "update" && session?.name) {
-        token.name = session.name
+        token.name = session.name;
       }
-      
+
       // pass in user id and address to token
       if (user) {
         return {

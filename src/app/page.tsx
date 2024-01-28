@@ -7,6 +7,7 @@ import {
   HomeJoin,
   HomePlans,
   HomeOffers,
+  Spinner,
 } from "@/components";
 import { Favourite, Special, Welcome } from "@/components/Home";
 // import FileInput from "@/components/input";
@@ -19,6 +20,7 @@ export default function HomePage() {
 
       <Welcome className="sm:hidden" />
 
+      <Spinner />
       {/* <LocaleSwitcher /> */}
 
       {/* <FileInput /> */}

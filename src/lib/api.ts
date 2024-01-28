@@ -1,4 +1,4 @@
-import { fetchWpAPI, getAPIRequest } from "@/utils";
+import { fetchWpAPI, getAPIResponse } from "@/utils";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -10,45 +10,48 @@ export const getAllPostsFromWordPress = async (slug?: string) => {
 
   console.log("retrieved blog posts after 5 seconds");
 
-  const data = await fetchWpAPI(
-    `query FetchPosts($first: Int = 100) {
-      posts(first: $first) {
-        nodes {
-          excerpt
-          featuredImage {
-            node {
-              sourceUrl
+  try {
+    const data = await fetchWpAPI(
+      `query FetchPosts($first: Int = 100) {
+        posts(first: $first) {
+          nodes {
+            excerpt
+            featuredImage {
+              node {
+                sourceUrl
+              }
             }
-          }
-          slug
-          title
-          date
-          author {
-            node {
-              name
+            slug
+            title
+            date
+            author {
+              node {
+                name
+              }
             }
           }
         }
       }
+    `,
+      {
+        variables: {
+          first: 100,
+        },
+      }
+    );
+
+    const result = slug
+      ? data.posts.nodes.find((r: { slug: string }) => r.slug === slug)
+      : data.posts.nodes;
+
+    if (slug) {
+      if (!result) notFound();
     }
-  `,
-    {
-      variables: {
-        first: 100,
-      },
-    }
-  );
 
-
-  const result = slug
-    ? data.posts.nodes.find((r: { slug: string }) => r.slug === slug)
-    : data.posts.nodes;
-
-  if (slug) {
-    if (!result) notFound();
+    return result;
+  } catch (error) {
+    console.error("error fetching post");
   }
-
-  return result;
 };
 
 export const getAllCars = async (slug?: string) => {
@@ -60,7 +63,11 @@ export const getAllCars = async (slug?: string) => {
 
   console.log("retrieved cars listings after 5seconds");
 
-  const response = await getAPIRequest(url);
+  try {
+    const response = await getAPIResponse(url);
 
-  return response.cars;
+    return response.cars;
+  } catch (error) {
+    console.error("error fetching cars list");
+  }
 };

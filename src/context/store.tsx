@@ -19,25 +19,24 @@ type ContextProps = {
 
 const GlobalContext = React.createContext<ContextProps>({
   isMenuClicked: false,
-  setIsMenuClicked: () => { },
+  setIsMenuClicked: () => {},
   isScrolled: false,
-  setIsScrolled: () => { },
+  setIsScrolled: () => {},
   featuresClick: false,
-  setFeaturesClick: () => { },
-  authClick: false,
-  setAuthClick: () => { },
+  setFeaturesClick: () => {},
+  authClick: true,
+  setAuthClick: () => {},
   loginBtn: false,
-  setLoginBtn: () => { },
-  globalSearchValue: '',
-  setGlobalSearchValue: () => { },
-
+  setLoginBtn: () => {},
+  globalSearchValue: "",
+  setGlobalSearchValue: () => {},
 });
 
 export const GlobalContextProvider = ({ children }: any) => {
   const [isMenuClicked, setIsMenuClicked] = React.useState(false);
   const [featuresClick, setFeaturesClick] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [authClick, setAuthClick] = React.useState(false);
+  const [authClick, setAuthClick] = React.useState(true);
   const [loginBtn, setLoginBtn] = React.useState(true);
   const [globalSearchValue, setGlobalSearchValue] = React.useState("");
 
@@ -55,7 +54,7 @@ export const GlobalContextProvider = ({ children }: any) => {
         isScrolled,
         setIsScrolled,
         globalSearchValue,
-        setGlobalSearchValue
+        setGlobalSearchValue,
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { BsLink } from "react-icons/bs";
-import { Loading, Section, Slider } from "..";
+import { Loading, Section } from "..";
 import Link from "next/link";
 import StoryWrapper from "./StoryWrapper";
 
@@ -21,9 +21,7 @@ export default function CarStory() {
       </div>
 
       <Suspense fallback={<Loading />}>
-        <Slider>
           <StoryWrapper />
-        </Slider>
       </Suspense>
     </Section>
   );
