@@ -15,10 +15,9 @@ export const fetchWpAPI = async (
   });
 
   const response = await request.json();
-
+  
   if (response.errors) {
     console.error(response.errors);
-    throw new Error("Failed to fetch from wordpress");
   }
   return response.data;
 };

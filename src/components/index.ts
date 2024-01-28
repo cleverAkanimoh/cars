@@ -32,7 +32,6 @@ export { default as Footer } from "./Footer";
 export { default as NavBar } from "./NavBar";
 
 // Comp
-export {default as Mount} from "./Mount";
 export {default as Card} from "./Card";
 export {default as Spinner} from "./Spinner";
 export {default as Loading} from "./Loading";

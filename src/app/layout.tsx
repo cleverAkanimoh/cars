@@ -6,7 +6,7 @@ import {
   Rubik,
   Lusitana,
 } from "next/font/google";
-import { Mount } from "@/components";
+import { Footer, NavBar } from "@/components";
 
 import { Providers } from "@/context";
 
@@ -64,11 +64,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${openSans.variable} ${rubik.variable} ${robotoMono.variable} ${sofia.variable} ${lusitana.variable} font-sans`}
+      className={`${openSans.variable} ${rubik.variable} ${robotoMono.variable} ${sofia.variable} ${lusitana.variable} font-rubik`}
     >
       <Providers>
         <body className="scroll-smooth w-full overflow-x-hidden dark:text-gray-400 dark:bg-black bg-purple-50">
-          <Mount>{children}</Mount>
+          <NavBar />
+          {children}
+          <Footer />
         </body>
       </Providers>
     </html>
