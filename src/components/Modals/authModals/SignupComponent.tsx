@@ -193,7 +193,7 @@ const CategoryBtn = ({
       <Icon className="h-6 opacity-20 absolute max-xs:top-1 bottom-1 left-1 -z-10" />
 
       <label
-        className="h-full w-full z-20 border absolute top-0 left-0 font-serif text-xs sm:text-sm capitalize cursor-pointer hover:border-purple-950 hover:bg-opacity-20 hover:bg-purple-200 flex items-end justify-center pb-1  rounded-md transition-all duration-200 peer-checked:border-purple-950 peer-checked:bg-purple-200 peer-checked:bg-opacity-20 peer-checked:border-2 peer-checked:pointer-events-none"
+        className="h-full w-full z-20 border absolute top-0 left-0 font-serif text-xs sm:text-sm capitalize cursor-pointer hover:border-purple-950 hover:bg-opacity-20 hover:bg-purple-200 flex items-end justify-center pb-1  rounded-md transition-all duration-200 peer-checked:border-purple-950 peer-checked:bg-purple-200 peer-checked:bg-opacity-20 peer-checked:border-2 peer-checked:font-bold"
         htmlFor={value}
       >
         {value}
