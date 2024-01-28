@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    user-select: none;
+    @apply motion-reduce:transition-none;
+  }
+
+  .transition-custom {
+    @apply motion-reduce:transition-none transition-all duration-300;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  .img {
+    background-image: url(../../public/images/body_bg.jpg) no-repeat center/cover;
+    @apply bg-opacity-50;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-red-600 hover:bg-red-700 rounded-xl;
+  }
+  
+  .skeletonbg{
+  @apply bg-gray-200 dark:bg-gray-800
+  }
+  
+  
+
+  /* slider */
+
+  .slider {
+    position: static !important;
+    display: grid !important;
+  }
+
+  .slider .swiper-pagination-bullet-active {
+    @apply inset-auto m-0 self-center bg-purple-900 dark:bg-gray-200;
+  }
+
+  .slider .swiper-pagination-bullet {
+    @apply dark:bg-gray-500;
+  }
+
+  .slider .swiper-pagination {
+    inset: initial !important;
+    @apply self-end justify-self-center -mb-8 py-2;
+  }
+
+  /* scroll slider */
+
+  .scroll-slider::-webkit-scrollbar {
+    @apply h-1;
+  }
+
+  /* Track */
+  .scroll-slider::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  /* Handle */
+  .scroll-slider::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 hover:bg-gray-400;
+  }
+
+  /* authentication */
+
+  .login-container {
+    @apply gap-4 sm:gap-2 min-h-fit min-w-full flex items-center justify-center flex-col px-1 sm:px-7;
+  }
+
+  .login-form {
+    @apply flex flex-col min-w-full max-w-[550px];
+  }
+
+  .login-form > input {
+    border: 1px solid rgb(219, 213, 209);
+    height: 48px;
+    text-indent: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    @apply bg-purple-50 text-[.99rem] w-full font-normal;
+  }
+
+  .login-form > input:focus {
+    outline: none;
+  }
+
+  .login-form > input:first-of-type {
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  .login-form > input:last-of-type {
+    border-radius: 0px 0px 6px 6px;
+    border-top: none;
+  }
+
+  .login-form > button {
+    background-color: #ff8c38;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    margin-top: 22px;
+    color: white;
+  }
+
+  /* sign up form */
+
+  .signup-form {
+    @apply grid grid-cols-1 sm:grid-cols-2 w-full max-w-[550px];
+  }
+
+  .signup-input {
+    @apply shadow-sm h-12 indent-[10px] font-normal bg-purple-50 text-[.98rem] focus:outline-0 border;
+  }
+
+  .signup-form > button {
+    background-color: #ff8c38;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    margin-top: 22px;
+    color: white;
+    grid-column: span 2;
+  }
+
+  .auth-btn {
+    @apply w-24 h-full text-sm sm:text-base font-normal border-r bg-purple-100 transition-all duration-500;
+  }
+
+  .auth-btn-active {
+    @apply bg-purple-950 text-white;
+  }
+
+  .category-btn {
+    @apply relative h-16 w-20;
+  }
+
+  .category-btn input[type="radio"] {
+    @apply opacity-0;
+  }
+
+  .category-label {
+    @apply absolute top-0 left-0 cursor-pointer hover:border-purple-950 hover:bg-opacity-20 hover:border-2 hover:bg-purple-200 flex items-end justify-center h-16 w-20 pb-1 border rounded-md shadow-md transition-all duration-200;
+  }
+
+  .tick-icon {
+    @apply absolute top-2 right-2 z-[200] opacity-0 transition-all duration-700;
+  }
+}

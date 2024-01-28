@@ -1,0 +1,30 @@
+Route (app)                              Size     First Load JS
+┌ ○ /                                    305 B           467 kB
+├ ○ /_not-found                          0 B                0 B
+├ ○ /about                               305 B           467 kB
+├ λ /api/auth/[...nextauth]              0 B                0 B
+├ ○ /api/cars                            0 B                0 B
+├ ○ /blog                                305 B           467 kB
+├ λ /blog/[slug]                         305 B           467 kB
+├ ○ /listings                            1.05 kB         468 kB
+├ λ /listings/[slug]                     305 B           467 kB
+├ ○ /listings/new                        306 B           467 kB
+└ ○ /support                             305 B           467 kB
++ First Load JS shared by all            471 kB
+  ├ chunks/00cbbcb7-4297640ec2e69128.js  2.61 kB
+  ├ chunks/106-c279deb074538561.js       267 kB
+  ├ chunks/5349c568-581be89a73834035.js  356 B
+  ├ chunks/598-c8de5eb081aa270e.js       11.9 kB
+  ├ chunks/938-29bd6e2d7af3aee5.js       26.7 kB
+  ├ chunks/aaea2bcf-db06e217eb6c3c17.js  100 kB
+  ├ chunks/bc9c3264-a9e4f4783f9345ad.js  832 B
+  ├ chunks/e416a3ff-378881f3dd736812.js  760 B
+  ├ chunks/ec3863c0-f61e3c9414cbe2a7.js  481 B
+  ├ chunks/fd9d1056-ac7e323f86daabce.js  53.3 kB
+  ├ chunks/main-app-627c64228ac53600.js  219 B
+  ├ chunks/webpack-c621716d53c80ca6.js   1.82 kB
+  └ css/336a2c12353e728f.css             4.64 kB
+
+
+○  (Static)   prerendered as static content
+λ  (Dynamic)  server-rendered on demand using Node.js
