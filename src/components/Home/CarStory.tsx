@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import {BsLink } from "react-icons/bs";
+import { BsLink } from "react-icons/bs";
 import { Loading, Section, Slider } from "..";
 import Link from "next/link";
 import StoryWrapper from "./StoryWrapper";
