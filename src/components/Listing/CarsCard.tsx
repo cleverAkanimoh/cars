@@ -35,7 +35,7 @@ type CardProps = {
   weight_in_lbs: number;
   acceleration: number;
   year: string;
-  origin: string;
+  origin: string
 };
 
 export default function CarsCard({
@@ -143,7 +143,7 @@ export default function CarsCard({
 
             <Specifications
               feature={acceleration}
-              heading={"aceleration"}
+              heading={"acceleration"}
               Icon={MdShutterSpeed}
               isListAlign={isListAlign}
             />
@@ -254,7 +254,7 @@ function Specifications(props: {
           title={props.isListAlign ? props.heading : undefined}
         >
           <props.Icon className="text-xl h-5" />
-          <span className="font-serif">{props.feature}</span>
+          <span className="font-serif text-sm">{props.feature}</span>
         </div>
         {!props.isListAlign && (
           <span className="capitalize font-serif font-normal text-sm xs:text-[.9rem] text-slate-900 dark:text-gray-400">
@@ -297,7 +297,7 @@ function Availability({
           }
         )}
       >
-        <span className="text-sm xs:text-[.98rem] dark:text-white font-lusitana capitalize">
+        <span className="text-sm xs:text-[.98rem] dark:text-white font-rubik capitalize">
           {text}
         </span>
       </div>

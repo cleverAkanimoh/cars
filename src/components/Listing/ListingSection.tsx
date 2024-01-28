@@ -44,7 +44,7 @@ export default async function ListingSection({
       <div className="md:h-[86vh] md:overflow-hidden md:overflow-y-auto w-full flex justify-center items-start">
         <Section className="md:max-w-full items-center justify-center mb-5 bg-white dark:bg-black border border-red-50 dark:border-gray-800 gap-y-6">
           {displayedPost.length !== 0 && (
-            <p className="w-full text-center font-serif px-4">
+            <p className="w-full text-center font-rubik px-4">
               showing&nbsp;
               {displayedPost.length === allCars.length
                 ? "all"
@@ -76,6 +76,7 @@ export default async function ListingSection({
                     />
                   ))}
               </article>
+              
               <Pagination
                 totalPosts={displayedPost.length}
                 postPerPage={postsPerPage}

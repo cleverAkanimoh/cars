@@ -57,7 +57,7 @@ export default function FilterHeader() {
 
         <div
           className={clsx("flex-wrap gap-y-4 gap-x-3", {
-            "flex": toggleFilter,
+            flex: toggleFilter,
             "hidden max-md:flex": !toggleFilter,
           })}
         >
@@ -120,7 +120,7 @@ const ButtonDiv = ({
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const isDefault = !searchParams.has("align");
+  const isDefault = !searchParams.has("align") && query === "grid";
   const isActive = searchParams.has("align", query) || isDefault;
 
   const handleAlignCards = (term: string) => {
@@ -128,7 +128,7 @@ const ButtonDiv = ({
     term ? params.set("align", term) : params.delete("align");
     replace(`${pathname}?${params.toString()}`);
   };
-  
+
   return (
     <Button
       onClick={() => handleAlignCards(query)}

@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        rubik: ["var(--font-rubik)"],
         sans: ["var(--font-opensans)"],
+        serif: ["var(--font-lusitana)"],
         mono: ["var(--font-roboto-mono)"],
-        serif: ["var(--font-rubik)"],
-        lusitana: ["var(--font-lusitana)"],
         cursive: ["var(--font-sofia)"],
       },
       screens: {
