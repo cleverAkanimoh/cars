@@ -1,24 +1,25 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { NavBar, Footer } from '.'
-import Loading from '@/app/(overview)/loading'
+import React from "react";
+import { NavBar, Footer } from ".";
+import Loading from "@/app/(overview)/loading";
 
-type MountProps = { children: React.ReactNode }
+type MountProps = { children: React.ReactNode };
 
 export default function Mount({ children }: MountProps) {
+  const [mounted, setMounted] = React.useState(false);
 
-    const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    React.useEffect(() => { setMounted(true) }, [])
+  if (!mounted) return <>{children}</>;
 
-    if (!mounted) return <Loading />
-
-    return (
-        <>
-            <NavBar />
-            {children}
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <NavBar />
+      {children}
+      <Footer />
+    </>
+  );
 }
