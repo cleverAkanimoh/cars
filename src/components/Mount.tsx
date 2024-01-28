@@ -2,7 +2,6 @@
 
 import React from "react";
 import { NavBar, Footer } from ".";
-import Loading from "@/app/(overview)/loading";
 
 type MountProps = { children: React.ReactNode };
 
