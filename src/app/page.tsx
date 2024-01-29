@@ -3,14 +3,11 @@ import {
   HomeSection,
   HomeHeader,
   Main,
-  // LocaleSwitcher,
   HomeJoin,
   HomePlans,
   HomeOffers,
-  Spinner,
 } from "@/components";
 import { Favourite, Special, Welcome } from "@/components/Home";
-// import FileInput from "@/components/input";
 
 export default function HomePage() {
 
@@ -19,11 +16,6 @@ export default function HomePage() {
       <HomeHeader />
 
       <Welcome className="sm:hidden" />
-
-      <Spinner />
-      {/* <LocaleSwitcher /> */}
-
-      {/* <FileInput /> */}
 
       <Favourite />
 

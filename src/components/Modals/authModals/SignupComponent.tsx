@@ -38,18 +38,28 @@ export default function SignupComponent() {
 
     if (User.passcode !== User.confirmPasscode) {
       setError("passwords do not match");
-      setTimeout(() => setError(""), 6000);
       setSubmiting(false);
       return;
     }
 
     try {
       await signup(User);
+      setUser({
+        firstname: "",
+        lastname: "",
+        email: "",
+        img: "",
+        role: "",
+        passcode: "",
+        confirmPasscode: "",
+      });
 
       setLoginBtn(true);
     } catch (err) {
       console.error(err);
+      setError("an error occurred");
     }
+    setTimeout(() => setError(""), 6000);
     setSubmiting(false);
   };
 
@@ -154,7 +164,7 @@ export default function SignupComponent() {
         >
           {submiting ? (
             <>
-              <Spinner /> <span>submitting</span>
+              <Spinner /> <span>submitting... please wait</span>
             </>
           ) : (
             "sign in"

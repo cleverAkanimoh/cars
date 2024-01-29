@@ -90,16 +90,6 @@
     @apply bg-purple-50 text-xs w-full h-12 border border-grayLine indent-[10px] shadow-xs focus:outline-none first-of-type:rounded-t-md last-of-type:rounded-b-md last-of-type:border-t-0;
   }
 
-
-  .login-form > button {
-    background-color: #ff8c38;
-    border: none;
-    border-radius: 6px;
-    height: 45px;
-    margin-top: 22px;
-    color: white;
-  }
-
   /* sign up form */
 
   .signup-input {

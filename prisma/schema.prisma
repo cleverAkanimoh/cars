@@ -31,7 +31,7 @@ model Session {
   sessionToken String   @unique
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId       String
+  userId     String
 }
 
 model VerificationToken {

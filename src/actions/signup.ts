@@ -8,14 +8,12 @@ type UserProps = {
   email: string;
   role: string;
   passcode: string;
-  img?: string;
 };
 
 export default async function signup({
   firstname,
   lastname,
   email,
-  img,
   role,
   passcode,
 }: UserProps) {
@@ -28,7 +26,6 @@ export default async function signup({
   const User = {
     name: `${firstname.toLowerCase()} ${lastname.toLowerCase()}`,
     email,
-    img,
     role,
     passcode: hashpasscode,
   };
@@ -40,6 +37,9 @@ export default async function signup({
   }
 
   const signupUser = await prisma.user.create({ data: User });
+  await prisma.userInfo.create({
+    data: { firstname, lastname, userId: signupUser.id },
+  });
 
   return signupUser as User;
 }

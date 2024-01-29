@@ -1,10 +1,11 @@
-import { Button } from "@/components";
+import { Button, Spinner } from "@/components";
 import React from "react";
 
 import { signIn } from "next-auth/react";
 
 import { BsGoogle } from "react-icons/bs";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+import { shimmer } from "@/components/Skeletons/blog-skeleton";
 
 export default function LoginComponent() {
   const [submitting, setSubmitting] = React.useState(false);
@@ -102,7 +103,7 @@ export default function LoginComponent() {
 
         {userInfo.passcode && (
           <label
-          htmlFor="passcode"
+            htmlFor="passcode"
             className="absolute right-3 cursor-pointer bottom-20 z-40"
             onClick={() => setPassTypeText((prev) => !prev)}
           >
@@ -114,12 +115,20 @@ export default function LoginComponent() {
           </label>
         )}
 
-        <Button
-          submitting={submitting}
-          className="hover:bg-orange-400 justify-center"
+        <button
+          disabled={submitting}
+          className={`${submitting && shimmer} ${
+            submitting ? "cursor-not-allowed" : "hover:bg-orange-300"
+          } relative bg-orange-500 w-full h-[45px] mt-4 text-white col-span-2 rounded-md flex gap-3 items-center justify-center`}
         >
-          log in
-        </Button>
+          {submitting ? (
+            <>
+              <Spinner /> <span>signing you in... please wait</span>
+            </>
+          ) : (
+            "sign in"
+          )}
+        </button>
       </form>
     </>
   );
